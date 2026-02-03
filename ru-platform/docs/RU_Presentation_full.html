@@ -1,0 +1,98 @@
+﻿<!doctype html>
+<html><head><meta charset='utf-8'><title>RU Presentation</title>
+<style>
+@page { size: 16in 9in; margin: 0; }
+body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; color: #f7f4ee; background: #0e1210; }
+.slide { width: 16in; height: 9in; page-break-after: always; padding: 64px; box-sizing: border-box; background: radial-gradient(1200px 600px at 10% -10%, rgba(242,201,76,.18), transparent 60%), radial-gradient(900px 600px at 90% 0%, rgba(230,126,34,.18), transparent 60%), #0e1210; }
+.h1 { font-size: 54px; margin: 0 0 12px; }
+.h2 { font-size: 34px; margin: 0 0 12px; }
+.p { font-size: 20px; color: #c7c0b2; }
+.list { margin: 12px 0 0; font-size: 24px; }
+.badge { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(242,201,76,.15); border: 1px solid rgba(242,201,76,.4); font-size: 14px; letter-spacing: .3px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+.card { background: rgba(20,27,23,.9); border: 1px solid rgba(247,244,238,.08); border-radius: 18px; padding: 18px; }
+.placeholder { height: 280px; border-radius: 14px; border: 2px dashed rgba(247,244,238,.25); display:flex; align-items:center; justify-content:center; color:#c7c0b2; font-size:18px; }
+.footer { position: absolute; bottom: 36px; left: 64px; color:#8f8777; font-size: 14px; }
+</style></head><body>
+
+<div class='slide'>
+  <span class='badge'>Plateforme RU</span>
+  <div class='h1'>Plateforme de Gestion du Restaurant Universitaire</div>
+  <div class='p'>Gestion des menus, reservations, commandes, stock, avis et statistiques.</div>
+  <div class='grid'>
+    <div class='card'><div class='h2'>Objectif</div><div class='p'>Centraliser la gestion du restaurant universitaire pour etudiants et admin.</div></div>
+    <div class='card'><div class='h2'>Valeur</div><div class='p'>Experience fluide, suivi des quantites et reporting.</div></div>
+  </div>
+  <div class='footer'>Nom: ____________________  |  Classe: __________  |  Date: __________</div>
+</div>
+
+<div class='slide'>
+  <div class='h2'>Fonctionnalites Cote Etudiant</div>
+  <ul class='list'>
+    <li>Consulter les menus</li>
+    <li>Reserver un plat</li>
+    <li>Paiement simule</li>
+    <li>Laisser un avis</li>
+  </ul>
+  <div class='grid'>
+    <div class='placeholder'>Capture page publique</div>
+    <div class='placeholder'>Capture reservation</div>
+  </div>
+</div>
+
+<div class='slide'>
+  <div class='h2'>Fonctionnalites Cote Admin</div>
+  <ul class='list'>
+    <li>Creer menus test</li>
+    <li>Voir reservations / ventes</li>
+    <li>Consulter les stats</li>
+  </ul>
+  <div class='grid'>
+    <div class='placeholder'>Capture admin</div>
+    <div class='placeholder'>Capture stats</div>
+  </div>
+</div>
+
+<div class='slide'>
+  <div class='h2'>Demo</div>
+  <ul class='list'>
+    <li>Page publique</li>
+    <li>Reservation</li>
+    <li>Mes commandes</li>
+    <li>Admin: reservations</li>
+  </ul>
+  <div class='placeholder' style='margin-top:24px;'>Capture demo complete</div>
+</div>
+
+<div class='slide'>
+  <div class='h2'>Technologies</div>
+  <ul class='list'>
+    <li>Laravel (PHP)</li>
+    <li>SQLite</li>
+    <li>API REST</li>
+    <li>Blade UI</li>
+  </ul>
+</div>
+
+<div class='slide'>
+  <div class='h2'>Cahier des Charges (Extraits)</div>
+  <ul class='list'>
+    <li>CRUD menus/plats/categories</li>
+    <li>Limitation quantites</li>
+    <li>Decrementation stock</li>
+    <li>Commentaires & notes</li>
+    <li>Stats frequentation</li>
+    <li>Tableau de bord admin</li>
+  </ul>
+</div>
+
+<div class='slide'>
+  <div class='h2'>Conclusion</div>
+  <ul class='list'>
+    <li>Projet fonctionnel</li>
+    <li>Respect du cahier des charges</li>
+    <li>Ameliorations possibles</li>
+  </ul>
+</div>
+
+</body></html>

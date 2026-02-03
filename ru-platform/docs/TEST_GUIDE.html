@@ -1,0 +1,13 @@
+﻿<!doctype html>
+<html><head><meta charset='utf-8'>
+<title>Test Guide</title>
+<style>
+body { font-family: Arial, sans-serif; line-height: 1.5; padding: 24px; }
+code, pre { background: #f3f3f3; padding: 6px; border-radius: 6px; }
+pre { white-space: pre-wrap; }
+</style>
+</head><body><h1>Guide de test (pas Ã  pas)</h1><br><h2>1) DÃ©marrer le serveur</h2><pre><code>cd C:\Users\tshopira\OneDrive\Desktop\PROJET\ru-platform
+powershell -ExecutionPolicy Bypass -File .\run-all.ps1 -OnlyServe
+</code></pre><br><h2>2) Ouvrir la page publique</h2><pre><code>http://127.0.0.1:8000/
+</code></pre><br><h2>3) Ouvrir lâ€™admin</h2><pre><code>http://127.0.0.1:8000/admin
+</code></pre><br><h2>4) Se connecter dans lâ€™admin</h2><p>- Email: `admin@ru.local`</p><p>- Mot de passe: `password`</p><p>- Clique **Se connecter**</p><br><h2>5) CrÃ©er un menu test</h2><p>Dans **CrÃ©ation rapide**, clique **CrÃ©er un menu test**.</p><br><h2>6) VÃ©rifier les menus cÃ´tÃ© public</h2><p>Retourne sur `http://127.0.0.1:8000/` et vÃ©rifie que les plats sâ€™affichent.</p><br><h2>7) RÃ©server un plat</h2><p>Sur la page publique:</p><p>- Clique **RÃ©server**</p><p>- Choisis la quantitÃ©</p><br><h2>8) VÃ©rifier la commande</h2><p>La commande apparaÃ®t dans **Mes commandes**.</p><br><h2>9) VÃ©rifier cÃ´tÃ© admin</h2><p>Dans `/admin`, regarde **RÃ©servations & Ventes**.</p><br><p>---</p><br><h2>Exporter en PDF</h2><p>Ouvre ce fichier et imprime en PDF:</p><p>- Windows: ouvrir `docs/TEST_GUIDE.md`, puis **Imprimer** â†’ **Microsoft Print to PDF**.</p><br></body></html>

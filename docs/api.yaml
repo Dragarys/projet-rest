@@ -1,0 +1,90 @@
+﻿openapi: 3.0.3
+info:
+  title: RU Platform API
+  version: 1.0.0
+servers:
+  - url: /api
+paths:
+  /auth/login:
+    post:
+      summary: Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+  /users:
+    get:
+      summary: List users (admin)
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create user (admin)
+      responses:
+        '201':
+          description: Created
+  /menus:
+    get:
+      summary: List menus
+    post:
+      summary: Create menu
+  /menus/{menuId}:
+    get:
+      summary: Get menu
+    put:
+      summary: Update menu
+    delete:
+      summary: Delete menu
+  /dishes:
+    get:
+      summary: List dishes
+    post:
+      summary: Create dish
+  /categories:
+    get:
+      summary: List categories
+    post:
+      summary: Create category
+  /orders:
+    get:
+      summary: List orders
+    post:
+      summary: Create order
+  /orders/{orderId}/pay:
+    post:
+      summary: Simulate payment
+  /reviews:
+    post:
+      summary: Create review
+  /stats/attendance:
+    get:
+      summary: Attendance stats
+components:
+  schemas:
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email: { type: string }
+        password: { type: string }
+    AuthResponse:
+      type: object
+      properties:
+        token: { type: string }
+        user: { $ref: '#/components/schemas/User' }
+    User:
+      type: object
+      properties:
+        id: { type: integer }
+        role: { type: string }
+        name: { type: string }
+        email: { type: string }

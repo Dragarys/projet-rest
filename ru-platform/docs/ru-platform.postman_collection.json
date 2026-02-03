@@ -1,0 +1,178 @@
+{
+  "info": {
+    "name": "RU Platform API",
+    "_postman_id": "b8e8d6b4-4b2b-4e9a-9f7e-4f3d2e8b6c12",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "auth", "login"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"admin@ru.local\",\"password\":\"password\"}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const data = pm.response.json();",
+              "if (data && data.token) { pm.collectionVariables.set('token', data.token); }"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Menus - List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/menus",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "menus"]
+        }
+      }
+    },
+    {
+      "name": "Categories - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/categories",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "categories"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Vegan\"}"
+        }
+      }
+    },
+    {
+      "name": "Ingredients - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/ingredients",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "ingredients"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Riz\",\"unit\":\"kg\"}"
+        }
+      }
+    },
+    {
+      "name": "Dishes - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/dishes",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "dishes"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Poulet Riz\",\"description\":\"Plat test\",\"price\":6.5}"
+        }
+      }
+    },
+    {
+      "name": "Menus - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/menus",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "menus"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"menu_date\":\"2026-02-03\",\"service\":\"lunch\",\"items\":[{\"dish_id\":1,\"quantity_limit\":50}]}"
+        }
+      }
+    },
+    {
+      "name": "Orders - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/orders",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "orders"]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"menu_id\":1,\"items\":[{\"dish_id\":1,\"quantity\":2}]}"
+        }
+      }
+    },
+    {
+      "name": "Orders - Pay",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/orders/1/pay",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "orders", "1", "pay"]
+        }
+      }
+    },
+    {
+      "name": "Stats - Attendance",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{token}}" }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/stats/attendance",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "stats", "attendance"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://127.0.0.1:8000" },
+    { "key": "token", "value": "" }
+  ]
+}

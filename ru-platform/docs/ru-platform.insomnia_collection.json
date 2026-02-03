@@ -1,0 +1,150 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2026-02-03T01:40:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_ru_platform",
+      "_type": "workspace",
+      "name": "RU Platform API",
+      "description": "",
+      "scope": "collection"
+    },
+    {
+      "_id": "env_base",
+      "_type": "environment",
+      "parentId": "wrk_ru_platform",
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "http://127.0.0.1:8000",
+        "token": ""
+      }
+    },
+    {
+      "_id": "req_login",
+      "_type": "request",
+      "parentId": "wrk_ru_platform",
+      "name": "Auth - Login",
+      "method": "POST",
+      "url": "{{ baseUrl }}/api/auth/login",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"email\":\"admin@ru.local\",\"password\":\"password\"}"
+      }
+    },
+    {
+      "_id": "req_menus",
+      "_type": "request",
+      "parentId": "wrk_ru_platform",
+      "name": "Menus - List",
+      "method": "GET",
+      "url": "{{ baseUrl }}/api/menus"
+    },
+    {
+      "_id": "req_categories_create",
+      "_type": "request",
+      "parentId": "wrk_ru_platform",
+      "name": "Categories - Create",
+      "method": "POST",
+      "url": "{{ baseUrl }}/api/categories",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ token }}" },
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"name\":\"Vegan\"}"
+      }
+    },
+    {
+      "_id": "req_ingredients_create",
+      "_type": "request",
+      "parentId": "wrk_ru_platform",
+      "name": "Ingredients - Create",
+      "method": "POST",
+      "url": "{{ baseUrl }}/api/ingredients",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ token }}" },
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"name\":\"Riz\",\"unit\":\"kg\"}"
+      }
+    },
+    {
+      "_id": "req_dishes_create",
+      "_type": "request",
+      "parentId": "wrk_ru_platform",
+      "name": "Dishes - Create",
+      "method": "POST",
+      "url": "{{ baseUrl }}/api/dishes",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ token }}" },
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"name\":\"Poulet Riz\",\"description\":\"Plat test\",\"price\":6.5}"
+      }
+    },
+    {
+      "_id": "req_menus_create",
+      "_type": "request",
+      "parentId": "wrk_ru_platform",
+      "name": "Menus - Create",
+      "method": "POST",
+      "url": "{{ baseUrl }}/api/menus",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ token }}" },
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"menu_date\":\"2026-02-03\",\"service\":\"lunch\",\"items\":[{\"dish_id\":1,\"quantity_limit\":50}]}"
+      }
+    },
+    {
+      "_id": "req_orders_create",
+      "_type": "request",
+      "parentId": "wrk_ru_platform",
+      "name": "Orders - Create",
+      "method": "POST",
+      "url": "{{ baseUrl }}/api/orders",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ token }}" },
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"menu_id\":1,\"items\":[{\"dish_id\":1,\"quantity\":2}]}"
+      }
+    },
+    {
+      "_id": "req_orders_pay",
+      "_type": "request",
+      "parentId": "wrk_ru_platform",
+      "name": "Orders - Pay",
+      "method": "POST",
+      "url": "{{ baseUrl }}/api/orders/1/pay",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ token }}" }
+      ]
+    },
+    {
+      "_id": "req_stats_attendance",
+      "_type": "request",
+      "parentId": "wrk_ru_platform",
+      "name": "Stats - Attendance",
+      "method": "GET",
+      "url": "{{ baseUrl }}/api/stats/attendance",
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{ token }}" }
+      ]
+    }
+  ]
+}
