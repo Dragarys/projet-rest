@@ -27,7 +27,7 @@ class ApiTokenAuth
         if (!$user) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
-
+        /** @var \App\Models\User $user */
         Auth::setUser($user);
         return $next($request);
     }

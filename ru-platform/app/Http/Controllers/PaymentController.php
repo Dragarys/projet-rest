@@ -11,6 +11,7 @@ class PaymentController extends Controller
     public function pay(Request $request, Order $order)
     {
         $user = $request->user();
+        /** @var \App\Models\User $user */
         if ($user->role === 'student' && $order->user_id !== $user->id) {
             abort(403);
         }

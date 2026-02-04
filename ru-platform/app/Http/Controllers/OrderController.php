@@ -15,6 +15,7 @@ class OrderController extends Controller
     public function index(Request $request)
     {
         $user = $request->user();
+        /** @var \App\Models\User $user */
         $query = Order::with('items.dish', 'menu');
 
         if ($user->role === 'student') {
@@ -45,6 +46,7 @@ class OrderController extends Controller
                 if (!$menuItem) {
                     abort(422, 'Dish not in menu');
                 }
+                /** @var \App\Models\MenuItem $menuItem */
 
                 if ($menuItem->quantity_limit !== null) {
                     $remaining = $menuItem->quantity_limit - $menuItem->sold_count;
@@ -54,6 +56,7 @@ class OrderController extends Controller
                 }
 
                 $dish = Dish::with('ingredients')->findOrFail($item['dish_id']);
+                /** @var \App\Models\Dish $dish */
                 $total += $dish->price * $item['quantity'];
 
                 foreach ($dish->ingredients as $ingredient) {
@@ -78,6 +81,7 @@ class OrderController extends Controller
 
             foreach ($data['items'] as $item) {
                 $dish = Dish::findOrFail($item['dish_id']);
+                /** @var \App\Models\Dish $dish */
                 OrderItem::create([
                     'order_id' => $order->id,
                     'dish_id' => $dish->id,
@@ -110,6 +114,7 @@ class OrderController extends Controller
     public function cancel(Request $request, Order $order)
     {
         $user = $request->user();
+        /** @var \App\Models\User $user */
         if ($user->role === 'student' && $order->user_id !== $user->id) {
             abort(403);
         }

@@ -41,6 +41,8 @@ class DishImageTest extends TestCase
         $this->assertStringContainsString('/storage/', $response->json('image_url'));
 
         // ensure file stored
-        Storage::disk('public')->assertExists(str_replace('/storage/', '', $response->json('image_url')));
+        /** @var \Illuminate\Filesystem\FilesystemAdapter $disk */
+        $disk = Storage::disk('public');
+        $disk->assertExists(str_replace('/storage/', '', $response->json('image_url')));
     }
 }
