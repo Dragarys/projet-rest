@@ -22,3 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+# Local PHPStan artifacts
+.phpstan.phar
+phpstan-local.neon
+phpstan-local-with-baseline.neon
