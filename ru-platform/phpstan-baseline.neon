@@ -1,16 +1,16 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:where\(\)\.$#'
-			identifier: staticMethod.notFound
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$api_token\.$#'
+			identifier: property.notFound
 			count: 1
 			path: app/Http/Controllers/AuthController.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\Category\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$password\.$#'
+			identifier: property.notFound
 			count: 1
-			path: app/Http/Controllers/CategoryController.php
+			path: app/Http/Controllers/AuthController.php
 
 		-
 			message: '#^Call to an undefined static method App\\Models\\Category\:\:orderBy\(\)\.$#'
@@ -19,58 +19,10 @@ parameters:
 			path: app/Http/Controllers/CategoryController.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\Dish\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/DishController.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\Ingredient\:\:\$id\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Http/Controllers/IngredientController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Ingredient\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/IngredientController.php
-
-		-
 			message: '#^Call to an undefined static method App\\Models\\Ingredient\:\:orderBy\(\)\.$#'
 			identifier: staticMethod.notFound
 			count: 1
 			path: app/Http/Controllers/IngredientController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:where\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/IngredientController.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\Menu\:\:\$id\.$#'
-			identifier: property.notFound
-			count: 2
-			path: app/Http/Controllers/MenuController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Menu\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/MenuController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\MenuItem\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: app/Http/Controllers/MenuController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\MenuItem\:\:where\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/MenuController.php
 
 		-
 			message: '#^Access to an undefined property App\\Models\\Dish\|Illuminate\\Database\\Eloquent\\Collection\<int, App\\Models\\Dish\>\:\:\$ingredients\.$#'
@@ -79,19 +31,13 @@ parameters:
 			path: app/Http/Controllers/OrderController.php
 
 		-
-			message: '#^Access to an undefined property App\\Models\\Dish\|Illuminate\\Database\\Eloquent\\Collection\<int, App\\Models\\Dish\>\:\:\$price\.$#'
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$quantity_limit\.$#'
 			identifier: property.notFound
 			count: 1
 			path: app/Http/Controllers/OrderController.php
 
 		-
-			message: '#^Access to an undefined property App\\Models\\Order\:\:\$status\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Http/Controllers/OrderController.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\Order\:\:\$user_id\.$#'
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$sold_count\.$#'
 			identifier: property.notFound
 			count: 1
 			path: app/Http/Controllers/OrderController.php
@@ -103,55 +49,13 @@ parameters:
 			path: app/Http/Controllers/OrderController.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\MenuItem\:\:where\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: app/Http/Controllers/OrderController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Order\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
+			message: '#^Call to protected method increment\(\) of class Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: method.protected
 			count: 1
 			path: app/Http/Controllers/OrderController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\OrderItem\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/OrderController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/OrderController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:where\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/OrderController.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\Order\:\:\$id\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Http/Controllers/PaymentController.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\Order\:\:\$status\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Http/Controllers/PaymentController.php
 
 		-
 			message: '#^Access to an undefined property App\\Models\\Order\:\:\$total_amount\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Http/Controllers/PaymentController.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\Order\:\:\$user_id\.$#'
 			identifier: property.notFound
 			count: 1
 			path: app/Http/Controllers/PaymentController.php
@@ -161,18 +65,6 @@ parameters:
 			identifier: staticMethod.notFound
 			count: 1
 			path: app/Http/Controllers/PaymentController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Review\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/ReviewController.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\Ingredient\:\:\$id\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Http/Controllers/StatsController.php
 
 		-
 			message: '#^Anonymous function has an unused use \$threshold\.$#'
@@ -211,34 +103,76 @@ parameters:
 			path: app/Http/Controllers/StatsController.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/StockController.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$id\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Http/Controllers/UserController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/UserController.php
-
-		-
 			message: '#^Call to an undefined static method App\\Models\\User\:\:paginate\(\)\.$#'
 			identifier: staticMethod.notFound
 			count: 1
 			path: app/Http/Controllers/UserController.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:where\(\)\.$#'
-			identifier: staticMethod.notFound
+			message: '#^Parameter \#1 \$user of static method Illuminate\\Support\\Facades\\Auth\:\:setUser\(\) expects Illuminate\\Contracts\\Auth\\Authenticatable, Illuminate\\Database\\Eloquent\\Model given\.$#'
+			identifier: argument.type
 			count: 1
 			path: app/Http/Middleware/ApiTokenAuth.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Category.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Dish.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Ingredient.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Menu.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/MenuItem.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Order.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/OrderItem.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Payment.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/Review.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Models/StockMovement.php
 
 		-
 			message: '#^Access to an undefined property App\\Models\\User\:\:\$role\.$#'
@@ -247,40 +181,10 @@ parameters:
 			path: app/Models/User.php
 
 		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
+			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
+			identifier: class.notFound
 			count: 1
-			path: tests/Feature/AdminAccessTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 4
-			path: tests/Feature/AdminAccessTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/AdminCrudTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 4
-			path: tests/Feature/AdminCrudTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/AuthAccessTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/DishImageTest.php
+			path: app/Models/User.php
 
 		-
 			message: '#^Call to an undefined method Illuminate\\Contracts\\Filesystem\\Filesystem\:\:assertExists\(\)\.$#'
@@ -289,391 +193,7 @@ parameters:
 			path: tests/Feature/DishImageTest.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/DishImageTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/DishTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Category\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/DishTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Dish\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/DishTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/DishTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/MenuTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Menu\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/MenuTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/MenuTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/OrderValidationTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Dish\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/OrderValidationTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Ingredient\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/OrderValidationTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Menu\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/OrderValidationTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\MenuItem\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/OrderValidationTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/OrderValidationTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/OrderValidationTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/PaymentTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Menu\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/PaymentTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Order\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/PaymentTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/PaymentTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/ReservationTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Menu\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/ReservationTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Order\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/ReservationTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/ReservationTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/ReviewTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Dish\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/ReviewTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/ReviewTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/RuPlatformTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Dish\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 3
-			path: tests/Feature/RuPlatformTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Ingredient\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/RuPlatformTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Menu\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 4
-			path: tests/Feature/RuPlatformTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\MenuItem\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/RuPlatformTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Order\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/RuPlatformTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\OrderItem\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/RuPlatformTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/RuPlatformTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:where\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/RuPlatformTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 4
-			path: tests/Feature/RuPlatformTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/StatsTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Dish\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/StatsTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Ingredient\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/StatsTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Menu\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/StatsTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Order\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/StatsTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\OrderItem\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/StatsTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/StatsTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Feature/StatsTest.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$api_token\.$#'
-			identifier: property.notFound
-			count: 1
-			path: tests/Feature/StockTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Ingredient\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/StockTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/StockTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Feature/StockTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Category\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Unit/CategoryModelTest.php
-
-		-
 			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with true will always evaluate to true\.$#'
 			identifier: method.alreadyNarrowedType
 			count: 1
 			path: tests/Unit/ExampleTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Ingredient\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Unit/IngredientModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Unit/IngredientModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:where\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Unit/IngredientModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Category\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Unit/ModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Dish\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Unit/ModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Ingredient\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Unit/ModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Menu\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Unit/ModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Order\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Unit/ModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Payment\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Unit/ModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Review\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Unit/ModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Unit/ModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:where\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Unit/ModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Unit/ModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Ingredient\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: tests/Unit/StockMovementModelTest.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:create\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 2
-			path: tests/Unit/StockMovementModelTest.php
