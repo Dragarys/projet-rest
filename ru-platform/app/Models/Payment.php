@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Payment where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Payment create(array $attributes = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Payment updateOrCreate(array $attributes, array $values = [])
+ * @property-read \App\Models\Order $order
  * @mixin \Illuminate\Database\Eloquent\Model
  */
 class Payment extends Model

@@ -25,7 +25,7 @@ class StockMovement extends Model
 
     protected $fillable = ['ingredient_id', 'delta_qty', 'reason'];
 
-    public function ingredient()
+    public function ingredient(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Ingredient::class);
     }

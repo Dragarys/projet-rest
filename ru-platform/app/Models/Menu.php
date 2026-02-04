@@ -29,12 +29,12 @@ class Menu extends Model
         'menu_date' => 'date',
     ];
 
-    public function items()
+    public function items(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(MenuItem::class);
     }
 
-    public function reviews()
+    public function reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Review::class);
     }

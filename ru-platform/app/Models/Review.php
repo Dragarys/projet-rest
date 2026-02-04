@@ -17,6 +17,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|Review where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Review create(array $attributes = [])
+ * @property-read \App\Models\Dish $dish
+ * @property-read \App\Models\User $user
  * @mixin \Illuminate\Database\Eloquent\Model
  */
 class Review extends Model
@@ -25,17 +27,17 @@ class Review extends Model
 
     protected $fillable = ['user_id', 'dish_id', 'menu_id', 'rating', 'comment'];
 
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function dish()
+    public function dish(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Dish::class);
     }
 
-    public function menu()
+    public function menu(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Menu::class);
     }

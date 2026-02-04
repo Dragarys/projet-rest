@@ -31,22 +31,22 @@ class Order extends Model
         'reserved_for' => 'date',
     ];
 
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function menu()
+    public function menu(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Menu::class);
     }
 
-    public function items()
+    public function items(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(OrderItem::class);
     }
 
-    public function payment()
+    public function payment(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
         return $this->hasOne(Payment::class);
     }
