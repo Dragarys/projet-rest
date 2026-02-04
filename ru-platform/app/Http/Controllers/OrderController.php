@@ -43,11 +43,10 @@ class OrderController extends Controller
 
             foreach ($data['items'] as $item) {
                 $menuItem = $menuItems->get($item['dish_id']);
-                if (!$menuItem) {
+                if (! $menuItem) {
                     abort(422, 'Dish not in menu');
                 }
                 /** @var \App\Models\MenuItem $menuItem */
-
                 if ($menuItem->quantity_limit !== null) {
                     $remaining = $menuItem->quantity_limit - $menuItem->sold_count;
                     if ($item['quantity'] > $remaining) {
@@ -70,7 +69,7 @@ class OrderController extends Controller
             foreach ($requiredIngredients as $ingredientId => $qtyNeeded) {
                 $current = StockMovement::where('ingredient_id', $ingredientId)->sum('delta_qty');
                 if ($current < $qtyNeeded) {
-                    abort(422, 'Insufficient stock for ingredient ' . $ingredientId);
+                    abort(422, 'Insufficient stock for ingredient '.$ingredientId);
                 }
             }
 
@@ -100,7 +99,7 @@ class OrderController extends Controller
                 StockMovement::create([
                     'ingredient_id' => $ingredientId,
                     'delta_qty' => -1 * $qtyNeeded,
-                    'reason' => 'Order reservation #' . $order->id,
+                    'reason' => 'Order reservation #'.$order->id,
                 ]);
             }
 

@@ -27,7 +27,7 @@ class MenuController extends Controller
         return DB::transaction(function () use ($data) {
             $menu = Menu::create($data);
 
-            if (!empty($data['items'])) {
+            if (! empty($data['items'])) {
                 foreach ($data['items'] as $item) {
                     MenuItem::create([
                         'menu_id' => $menu->id,
@@ -79,6 +79,7 @@ class MenuController extends Controller
     public function destroy(Menu $menu)
     {
         $menu->delete();
+
         return response()->json(['message' => 'Deleted']);
     }
 }

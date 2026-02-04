@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class DocsController extends Controller
 {
     public function apiYaml()
@@ -24,7 +22,7 @@ class DocsController extends Controller
             }
         }
 
-        if (!$path) {
+        if (! $path) {
             abort(404, 'API docs not found');
         }
 
@@ -57,6 +55,7 @@ class DocsController extends Controller
   </body>
 </html>
 HTML;
+
         return response($html, 200)->header('Content-Type', 'text/html');
     }
 }

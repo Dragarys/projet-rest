@@ -22,7 +22,7 @@ class StatsTest extends TestCase
         $user->api_token = hash('sha256', $plainToken);
         $user->save();
 
-        return ['Authorization' => 'Bearer ' . $plainToken];
+        return ['Authorization' => 'Bearer '.$plainToken];
     }
 
     public function test_attendance_and_top_dishes_and_stock_alerts(): void

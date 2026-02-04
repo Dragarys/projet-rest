@@ -15,8 +15,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $comment
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Review where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Review create(array $attributes = [])
+ *
  * @mixin \Illuminate\Database\Eloquent\Model
  */
 class Review extends Model

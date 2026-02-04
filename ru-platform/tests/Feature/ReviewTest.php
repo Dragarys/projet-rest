@@ -17,7 +17,7 @@ class ReviewTest extends TestCase
         $user->api_token = hash('sha256', $plainToken);
         $user->save();
 
-        return ['Authorization' => 'Bearer ' . $plainToken];
+        return ['Authorization' => 'Bearer '.$plainToken];
     }
 
     public function test_can_create_review_for_dish(): void

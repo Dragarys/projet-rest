@@ -21,7 +21,7 @@ class OrderValidationTest extends TestCase
         $user->api_token = hash('sha256', $plainToken);
         $user->save();
 
-        return ['Authorization' => 'Bearer ' . $plainToken];
+        return ['Authorization' => 'Bearer '.$plainToken];
     }
 
     public function test_order_rejected_when_quantity_limit_exceeded(): void

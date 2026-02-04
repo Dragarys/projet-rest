@@ -15,6 +15,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate(['name' => 'required|string|max:120']);
+
         return Category::create($data);
     }
 
@@ -27,12 +28,14 @@ class CategoryController extends Controller
     {
         $data = $request->validate(['name' => 'required|string|max:120']);
         $category->update($data);
+
         return $category;
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
+
         return response()->json(['message' => 'Deleted']);
     }
 }

@@ -29,6 +29,7 @@ class ReviewController extends Controller
         }
 
         $data['user_id'] = $request->user()->id;
+
         return Review::create($data);
     }
 }

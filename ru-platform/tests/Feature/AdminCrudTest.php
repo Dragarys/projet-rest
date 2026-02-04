@@ -2,9 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Models\Category;
-use App\Models\Ingredient;
-use App\Models\Menu;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
@@ -19,7 +16,7 @@ class AdminCrudTest extends TestCase
         $user->api_token = hash('sha256', $plainToken);
         $user->save();
 
-        return ['Authorization' => 'Bearer ' . $plainToken];
+        return ['Authorization' => 'Bearer '.$plainToken];
     }
 
     public function test_category_crud(): void
@@ -32,10 +29,10 @@ class AdminCrudTest extends TestCase
 
         $categoryId = $create->json('id');
 
-        $update = $this->putJson('/api/categories/' . $categoryId, ['name' => 'UpdatedCat'], $headers);
+        $update = $this->putJson('/api/categories/'.$categoryId, ['name' => 'UpdatedCat'], $headers);
         $update->assertStatus(200)->assertJsonFragment(['name' => 'UpdatedCat']);
 
-        $delete = $this->deleteJson('/api/categories/' . $categoryId, [], $headers);
+        $delete = $this->deleteJson('/api/categories/'.$categoryId, [], $headers);
         $delete->assertStatus(200);
     }
 
@@ -49,13 +46,13 @@ class AdminCrudTest extends TestCase
 
         $id = $create->json('id');
 
-        $show = $this->getJson('/api/ingredients/' . $id, $headers);
+        $show = $this->getJson('/api/ingredients/'.$id, $headers);
         $show->assertStatus(200)->assertJsonStructure(['ingredient', 'stock']);
 
-        $update = $this->putJson('/api/ingredients/' . $id, ['name' => 'Sea Salt'], $headers);
+        $update = $this->putJson('/api/ingredients/'.$id, ['name' => 'Sea Salt'], $headers);
         $update->assertStatus(200)->assertJsonFragment(['name' => 'Sea Salt']);
 
-        $delete = $this->deleteJson('/api/ingredients/' . $id, [], $headers);
+        $delete = $this->deleteJson('/api/ingredients/'.$id, [], $headers);
         $delete->assertStatus(200);
     }
 
@@ -69,10 +66,10 @@ class AdminCrudTest extends TestCase
 
         $id = $create->json('id');
 
-        $update = $this->putJson('/api/menus/' . $id, ['service' => 'dinner'], $headers);
+        $update = $this->putJson('/api/menus/'.$id, ['service' => 'dinner'], $headers);
         $update->assertStatus(200)->assertJsonFragment(['service' => 'dinner']);
 
-        $delete = $this->deleteJson('/api/menus/' . $id, [], $headers);
+        $delete = $this->deleteJson('/api/menus/'.$id, [], $headers);
         $delete->assertStatus(200);
     }
 
@@ -89,10 +86,10 @@ class AdminCrudTest extends TestCase
         $index = $this->getJson('/api/users', $headers);
         $index->assertStatus(200)->assertJsonStructure(['data']);
 
-        $update = $this->putJson('/api/users/' . $id, ['name' => 'U1 Updated'], $headers);
+        $update = $this->putJson('/api/users/'.$id, ['name' => 'U1 Updated'], $headers);
         $update->assertStatus(200)->assertJsonFragment(['name' => 'U1 Updated']);
 
-        $delete = $this->deleteJson('/api/users/' . $id, [], $headers);
+        $delete = $this->deleteJson('/api/users/'.$id, [], $headers);
         $delete->assertStatus(200);
     }
 }

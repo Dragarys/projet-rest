@@ -16,7 +16,7 @@ class AdminAccessTest extends TestCase
         $user->api_token = hash('sha256', $plainToken);
         $user->save();
 
-        return ['Authorization' => 'Bearer ' . $plainToken];
+        return ['Authorization' => 'Bearer '.$plainToken];
     }
 
     public function test_student_cannot_list_users(): void

@@ -20,12 +20,14 @@ use Illuminate\Notifications\Notifiable;
  * @property string $password
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|User where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|User create(array $attributes = [])
  * @method static \Illuminate\Database\Eloquent\Builder|User orderBy(string $column, string $direction = 'asc')
  * @method static \Illuminate\Database\Eloquent\Builder|User findOrFail(mixed $id)
  * @method static \Illuminate\Database\Eloquent\Builder|User updateOrCreate(array $attributes, array $values = [])
  * @method static \Illuminate\Database\Eloquent\Builder|User paginate(int $perPage = null)
+ *
  * @mixin \Illuminate\Database\Eloquent\Model
  */
 class User extends Authenticatable

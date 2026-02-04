@@ -23,7 +23,7 @@ class RuPlatformTest extends TestCase
         $user->api_token = hash('sha256', $plainToken);
         $user->save();
 
-        return ['Authorization' => 'Bearer ' . $plainToken];
+        return ['Authorization' => 'Bearer '.$plainToken];
     }
 
     public function test_login_returns_token(): void
@@ -138,7 +138,7 @@ class RuPlatformTest extends TestCase
         ]);
 
         $headers = $this->authHeadersFor($user);
-        $response = $this->postJson('/api/orders/' . $order->id . '/pay', [], $headers);
+        $response = $this->postJson('/api/orders/'.$order->id.'/pay', [], $headers);
 
         $response->assertStatus(200)
             ->assertJsonFragment(['status' => 'paid']);

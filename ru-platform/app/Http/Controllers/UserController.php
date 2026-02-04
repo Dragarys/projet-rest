@@ -16,6 +16,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $this->ensureAdmin($request);
+
         return User::paginate(20);
     }
 
@@ -33,12 +34,14 @@ class UserController extends Controller
         ]);
 
         $data['password'] = Hash::make($data['password']);
+
         return User::create($data);
     }
 
     public function show(Request $request, User $user)
     {
         $this->ensureAdmin($request);
+
         return $user;
     }
 
@@ -49,7 +52,7 @@ class UserController extends Controller
         $data = $request->validate([
             'role' => 'sometimes|in:student,staff,admin',
             'name' => 'sometimes|string|max:120',
-            'email' => 'sometimes|email|unique:users,email,' . $user->id,
+            'email' => 'sometimes|email|unique:users,email,'.$user->id,
             'password' => 'sometimes|string|min:6',
             'student_id' => 'nullable|string|max:50',
             'staff_id' => 'nullable|string|max:50',
@@ -60,6 +63,7 @@ class UserController extends Controller
         }
 
         $user->update($data);
+
         return $user;
     }
 
@@ -67,6 +71,7 @@ class UserController extends Controller
     {
         $this->ensureAdmin($request);
         $user->delete();
+
         return response()->json(['message' => 'Deleted']);
     }
 }

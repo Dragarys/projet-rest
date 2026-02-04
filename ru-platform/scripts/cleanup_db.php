@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
-$app = require __DIR__ . '/../bootstrap/app.php';
+$app = require __DIR__.'/../bootstrap/app.php';
 $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
 use App\Models\Category;
@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\DB;
 
 DB::transaction(function () {
     $menu = Menu::with('items')->orderBy('id', 'desc')->first();
-    if (!$menu) {
+    if (! $menu) {
         echo "No menus found\n";
+
         return;
     }
 

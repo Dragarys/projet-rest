@@ -35,16 +35,17 @@ class DishController extends Controller
             }
 
             $dish = Dish::create($data);
-            if (!empty($data['category_ids'])) {
+            if (! empty($data['category_ids'])) {
                 $dish->categories()->sync($data['category_ids']);
             }
-            if (!empty($data['ingredients'])) {
+            if (! empty($data['ingredients'])) {
                 $sync = [];
                 foreach ($data['ingredients'] as $ing) {
                     $sync[$ing['id']] = ['qty' => $ing['qty']];
                 }
                 $dish->ingredients()->sync($sync);
             }
+
             return $dish->load(['categories', 'ingredients']);
         });
     }
@@ -71,9 +72,12 @@ class DishController extends Controller
         return DB::transaction(function () use ($data, $dish, $request) {
             if ($request->hasFile('image')) {
                 // Optionally delete previous file (best-effort)
-                if (!empty($dish->image_url)) {
+                if (! empty($dish->image_url)) {
                     $previous = preg_replace('#^/storage/#', '', $dish->image_url);
-                    try { Storage::disk('public')->delete($previous); } catch (\Exception $e) { /* ignore */ }
+                    try {
+                        Storage::disk('public')->delete($previous);
+                    } catch (\Exception $e) { /* ignore */
+                    }
                 }
                 $path = Storage::disk('public')->putFile('dishes', $request->file('image'));
                 $data['image_url'] = Storage::url($path);
@@ -90,6 +94,7 @@ class DishController extends Controller
                 }
                 $dish->ingredients()->sync($sync);
             }
+
             return $dish->load(['categories', 'ingredients']);
         });
     }
@@ -97,6 +102,7 @@ class DishController extends Controller
     public function destroy(Dish $dish)
     {
         $dish->delete();
+
         return response()->json(['message' => 'Deleted']);
     }
 }

@@ -2,13 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Models\Dish;
-use App\Models\Ingredient;
 use App\Models\Menu;
-use App\Models\MenuItem;
 use App\Models\Order;
-use App\Models\OrderItem;
-use App\Models\StockMovement;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
@@ -23,7 +18,7 @@ class ReservationTest extends TestCase
         $user->api_token = hash('sha256', $plainToken);
         $user->save();
 
-        return ['Authorization' => 'Bearer ' . $plainToken];
+        return ['Authorization' => 'Bearer '.$plainToken];
     }
 
     public function test_student_can_cancel_unpaid_order(): void
@@ -43,7 +38,7 @@ class ReservationTest extends TestCase
         ]);
 
         $headers = $this->authHeadersFor($user);
-        $response = $this->postJson('/api/orders/' . $order->id . '/cancel', [], $headers);
+        $response = $this->postJson('/api/orders/'.$order->id.'/cancel', [], $headers);
 
         $response->assertStatus(200)->assertJsonFragment(['status' => 'cancelled']);
         $this->assertDatabaseHas('orders', ['id' => $order->id, 'status' => 'cancelled']);
@@ -66,7 +61,7 @@ class ReservationTest extends TestCase
         ]);
 
         $headers = $this->authHeadersFor($user);
-        $response = $this->postJson('/api/orders/' . $order->id . '/cancel', [], $headers);
+        $response = $this->postJson('/api/orders/'.$order->id.'/cancel', [], $headers);
 
         $response->assertStatus(422);
         $this->assertDatabaseHas('orders', ['id' => $order->id, 'status' => 'paid']);

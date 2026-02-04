@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Ingredient;
 use App\Models\StockMovement;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class IngredientController extends Controller
 {
@@ -27,6 +26,7 @@ class IngredientController extends Controller
     public function show(Ingredient $ingredient)
     {
         $stock = StockMovement::where('ingredient_id', $ingredient->id)->sum('delta_qty');
+
         return ['ingredient' => $ingredient, 'stock' => $stock];
     }
 
@@ -38,12 +38,14 @@ class IngredientController extends Controller
         ]);
 
         $ingredient->update($data);
+
         return $ingredient;
     }
 
     public function destroy(Ingredient $ingredient)
     {
         $ingredient->delete();
+
         return response()->json(['message' => 'Deleted']);
     }
 }

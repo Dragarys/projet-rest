@@ -15,10 +15,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property float|null $total_amount
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Order where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Order create(array $attributes = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Order selectRaw(string $columns)
  * @method static \Illuminate\Database\Eloquent\Builder|Order paginate(int $perPage = null)
+ *
  * @mixin \Illuminate\Database\Eloquent\Model
  */
 class Order extends Model

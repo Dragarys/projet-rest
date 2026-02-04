@@ -13,7 +13,7 @@ class ApiTokenAuth
     public function handle(Request $request, Closure $next): Response
     {
         $header = $request->header('Authorization', '');
-        if (!str_starts_with($header, 'Bearer ')) {
+        if (! str_starts_with($header, 'Bearer ')) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
 
@@ -24,11 +24,12 @@ class ApiTokenAuth
 
         $hash = hash('sha256', $token);
         $user = User::where('api_token', $hash)->first();
-        if (!$user) {
+        if (! $user) {
             return response()->json(['message' => 'Unauthorized'], 401);
         }
         /** @var \App\Models\User $user */
         Auth::setUser($user);
+
         return $next($request);
     }
 }

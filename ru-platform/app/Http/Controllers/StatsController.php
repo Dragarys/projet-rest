@@ -7,7 +7,6 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\StockMovement;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class StatsController extends Controller
 {
@@ -46,6 +45,7 @@ class StatsController extends Controller
         return Ingredient::all()->map(function ($ingredient) use ($stocks) {
             $entry = $stocks->get($ingredient->id);
             $qty = $entry ? $entry->qty : 0;
+
             return ['ingredient' => $ingredient, 'qty' => $qty];
         })->filter(function ($row) use ($threshold) {
             return $row['qty'] < $threshold;

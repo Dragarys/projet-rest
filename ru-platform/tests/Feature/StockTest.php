@@ -18,7 +18,7 @@ class StockTest extends TestCase
         $user->api_token = hash('sha256', $plainToken);
         $user->save();
 
-        return ['Authorization' => 'Bearer ' . $plainToken];
+        return ['Authorization' => 'Bearer '.$plainToken];
     }
 
     public function test_admin_can_add_stock_movement(): void
@@ -58,7 +58,7 @@ class StockTest extends TestCase
         StockMovement::create(['ingredient_id' => $ingredient->id, 'delta_qty' => 10, 'reason' => 'Init']);
         StockMovement::create(['ingredient_id' => $ingredient->id, 'delta_qty' => -3, 'reason' => 'Used']);
 
-        $response = $this->getJson('/api/ingredients/' . $ingredient->id, $this->authHeadersFor($user));
+        $response = $this->getJson('/api/ingredients/'.$ingredient->id, $this->authHeadersFor($user));
         $response->assertStatus(200)->assertJsonFragment(['stock' => 7]);
     }
 }

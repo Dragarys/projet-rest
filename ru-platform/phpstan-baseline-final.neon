@@ -1,0 +1,25 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Access to an undefined property App\\Models\\Ingredient\:\:\$pivot\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/OrderController.php
+
+		-
+			message: '#^Call to protected method increment\(\) of class Illuminate\\Database\\Eloquent\\Model\.$#'
+			identifier: method.protected
+			count: 1
+			path: app/Http/Controllers/OrderController.php
+
+		-
+			message: '#^PHPDoc tag @method has invalid value \(public bool increment\(string \$column, int \$amount \= 1\)\)\: Unexpected token "increment", expected ''\('' at offset 227 on line 10$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: app/Models/MenuItem.php
+
+		-
+			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertIsBool\(\) with true will always evaluate to true\.$#'
+			identifier: method.alreadyNarrowedType
+			count: 1
+			path: tests/Unit/ExampleTest.php

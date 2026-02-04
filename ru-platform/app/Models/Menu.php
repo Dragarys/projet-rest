@@ -13,10 +13,12 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $description
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Menu where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Menu create(array $attributes = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Menu orderBy(string $column, string $direction = 'asc')
  * @method static \Illuminate\Database\Eloquent\Builder|Menu findOrFail(mixed $id)
+ *
  * @mixin \Illuminate\Database\Eloquent\Model
  */
 class Menu extends Model

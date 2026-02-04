@@ -18,11 +18,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Collection<int, \App\Models\Ingredient> $ingredients
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Dish where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish create(array $attributes = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Dish orderBy(string $column, string $direction = 'asc')
  * @method static \Illuminate\Database\Eloquent\Builder|Dish findOrFail(mixed $id)
  * @method static \Illuminate\Database\Eloquent\Builder|Dish updateOrCreate(array $attributes, array $values = [])
+ *
  * @mixin \Illuminate\Database\Eloquent\Model
  */
 class Dish extends Model

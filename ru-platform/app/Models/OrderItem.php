@@ -15,9 +15,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property float|null $price
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem create(array $attributes = [])
  * @method static \Illuminate\Database\Eloquent\Builder|OrderItem selectRaw(string $columns)
+ *
  * @mixin \Illuminate\Database\Eloquent\Model
  */
 class OrderItem extends Model

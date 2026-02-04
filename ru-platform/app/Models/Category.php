@@ -12,9 +12,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $name
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Category where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Category create(array $attributes = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Category orderBy(string $column, string $direction = 'asc')
+ *
  * @mixin \Illuminate\Database\Eloquent\Model
  */
 class Category extends Model

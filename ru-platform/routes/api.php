@@ -3,13 +3,13 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DishController;
+use App\Http\Controllers\DocsController;
+use App\Http\Controllers\InfoController;
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ReviewController;
-use App\Http\Controllers\InfoController;
-use App\Http\Controllers\DocsController;
 use App\Http\Controllers\StatsController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
