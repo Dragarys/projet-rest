@@ -13,6 +13,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $dish_id
  * @property int $rating
  * @property string|null $comment
+ * @property \App\Models\Dish $dish
+ * @property \App\Models\Menu|null $menu
+ * @property \App\Models\User $user
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  *
@@ -27,17 +30,17 @@ class Review extends Model
 
     protected $fillable = ['user_id', 'dish_id', 'menu_id', 'rating', 'comment'];
 
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function dish()
+    public function dish(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Dish::class);
     }
 
-    public function menu()
+    public function menu(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Menu::class);
     }

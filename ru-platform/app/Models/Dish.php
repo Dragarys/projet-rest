@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $stock
  * @property int|null $sold_count
  * @property string|null $image_url
+ * @property \Illuminate\Support\Collection<int, \App\Models\Category> $categories
  * @property \Illuminate\Support\Collection<int, \App\Models\Ingredient> $ingredients
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -33,18 +34,18 @@ class Dish extends Model
 
     protected $fillable = ['name', 'description', 'price', 'image_url'];
 
-    public function categories()
+    public function categories(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Category::class, 'dish_category');
     }
 
-    public function ingredients()
+    public function ingredients(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Ingredient::class, 'dish_ingredient')
             ->withPivot('qty');
     }
 
-    public function reviews()
+    public function reviews(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Review::class);
     }

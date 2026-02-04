@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $status
  * @property float|null $total
  * @property float|null $total_amount
+ * @property \Illuminate\Support\Collection<int, \App\Models\OrderItem> $items
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  *
@@ -43,7 +44,7 @@ class Order extends Model
         return $this->belongsTo(Menu::class);
     }
 
-    public function items()
+    public function items(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(OrderItem::class);
     }

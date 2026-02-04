@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $description
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Collection<int, \App\Models\MenuItem> $items
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Menu where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Menu create(array $attributes = [])
@@ -31,7 +32,7 @@ class Menu extends Model
         'menu_date' => 'date',
     ];
 
-    public function items()
+    public function items(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(MenuItem::class);
     }

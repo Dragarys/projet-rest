@@ -10,10 +10,11 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int $id
  * @property int $ingredient_id
- * @property int $quantity
+ * @property int $delta_qty
  * @property string $reason
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \App\Models\Ingredient $ingredient
  *
  * @method static \Illuminate\Database\Eloquent\Builder|StockMovement where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|StockMovement create(array $attributes = [])
@@ -27,7 +28,7 @@ class StockMovement extends Model
 
     protected $fillable = ['ingredient_id', 'delta_qty', 'reason'];
 
-    public function ingredient()
+    public function ingredient(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Ingredient::class);
     }

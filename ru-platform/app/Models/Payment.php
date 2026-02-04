@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property float $amount
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \App\Models\Order $order
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Payment where(string $column, $value = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Payment create(array $attributes = [])
@@ -27,7 +28,7 @@ class Payment extends Model
 
     protected $fillable = ['order_id', 'status', 'method', 'amount'];
 
-    public function order()
+    public function order(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Order::class);
     }

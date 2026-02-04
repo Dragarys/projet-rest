@@ -39,12 +39,10 @@ class StatsController extends Controller
 
         $stocks = StockMovement::selectRaw('ingredient_id, sum(delta_qty) as qty')
             ->groupBy('ingredient_id')
-            ->get()
-            ->keyBy('ingredient_id');
+            ->pluck('qty', 'ingredient_id');
 
         return Ingredient::all()->map(function ($ingredient) use ($stocks) {
-            $entry = $stocks->get($ingredient->id);
-            $qty = $entry ? $entry->qty : 0;
+            $qty = $stocks->get($ingredient->id, 0) ?? 0;
 
             return ['ingredient' => $ingredient, 'qty' => $qty];
         })->filter(function ($row) use ($threshold) {
