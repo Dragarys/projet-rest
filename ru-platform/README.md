@@ -31,6 +31,29 @@ Testing:
 - Generate text coverage: `php artisan test --coverage-text`
 - Generate HTML coverage: `composer test:coverage` (output in `storage/coverage/index.html`)
 
+Demo data & scripts:
+- Generate demo data (migrate fresh + seed): `./scripts/generate_demo_data.ps1`
+- Admin credentials created by seeder: `admin@ru.local` / `password`
+- Quick run with Sail: `./vendor/bin/sail artisan migrate:fresh --seed`
+
+Storage:
+- To serve uploaded dish images, run `php artisan storage:link` (creates `public/storage` symlink to storage/app/public)
+
+CI:
+- GitHub Actions workflow added at `.github/workflows/phpunit.yml` to run tests and upload coverage HTML as an artifact.- Coverage badge: CI now generates `docs/coverage-badge.svg` and commits it back to the repository automatically (on main). GitHub Pages workflow deploys `/docs` to Pages if enabled.
+
+Enabling GitHub Pages (manual step):
+1. Go to the repository Settings → Pages.
+2. Under "Build and deployment", set the Source to "GitHub Actions" or select the branch `main` and folder `/docs`.
+3. Save — the `pages-deploy.yml` workflow will publish the `docs` directory.
+
+Note: CI will generate and commit `docs/coverage-badge.svg`; the badge will be visible at `https://<your-org>.github.io/<repo>/coverage-badge.svg` once Pages is enabled.
+
+Running PHPStan locally without Composer/PHP:
+- Use the helper script: `./scripts/run_phpstan.ps1` (requires Docker Desktop)
+- To generate a baseline locally: `./scripts/run_phpstan.ps1 -GenerateBaseline`
+- See `docs/PHPStan.md` for more details on triaging and fixing issues.
+
 Test Status:
 | Area | Status | Notes |
 | --- | --- | --- |

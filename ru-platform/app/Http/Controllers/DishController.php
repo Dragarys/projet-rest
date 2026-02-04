@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dish;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -19,7 +20,7 @@ class DishController extends Controller
             'name' => 'required|string|max:120',
             'description' => 'nullable|string',
             'price' => 'required|numeric|min:0',
-            'image_url' => 'nullable|string|max:255',
+            'image' => 'nullable|image|max:2048',
             'category_ids' => 'nullable|array',
             'category_ids.*' => 'integer|exists:categories,id',
             'ingredients' => 'nullable|array',
@@ -27,7 +28,12 @@ class DishController extends Controller
             'ingredients.*.qty' => 'required|numeric|min:0.01',
         ]);
 
-        return DB::transaction(function () use ($data) {
+        return DB::transaction(function () use ($data, $request) {
+            if ($request->hasFile('image')) {
+                $path = Storage::disk('public')->putFile('dishes', $request->file('image'));
+                $data['image_url'] = Storage::url($path);
+            }
+
             $dish = Dish::create($data);
             if (!empty($data['category_ids'])) {
                 $dish->categories()->sync($data['category_ids']);
@@ -54,7 +60,7 @@ class DishController extends Controller
             'name' => 'sometimes|string|max:120',
             'description' => 'nullable|string',
             'price' => 'sometimes|numeric|min:0',
-            'image_url' => 'nullable|string|max:255',
+            'image' => 'nullable|image|max:2048',
             'category_ids' => 'nullable|array',
             'category_ids.*' => 'integer|exists:categories,id',
             'ingredients' => 'nullable|array',
@@ -62,7 +68,17 @@ class DishController extends Controller
             'ingredients.*.qty' => 'required|numeric|min:0.01',
         ]);
 
-        return DB::transaction(function () use ($data, $dish) {
+        return DB::transaction(function () use ($data, $dish, $request) {
+            if ($request->hasFile('image')) {
+                // Optionally delete previous file (best-effort)
+                if (!empty($dish->image_url)) {
+                    $previous = preg_replace('#^/storage/#', '', $dish->image_url);
+                    try { Storage::disk('public')->delete($previous); } catch (\Exception $e) { /* ignore */ }
+                }
+                $path = Storage::disk('public')->putFile('dishes', $request->file('image'));
+                $data['image_url'] = Storage::url($path);
+            }
+
             $dish->update($data);
             if (array_key_exists('category_ids', $data)) {
                 $dish->categories()->sync($data['category_ids'] ?? []);

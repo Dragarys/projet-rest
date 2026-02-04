@@ -34,16 +34,20 @@ class StatsController extends Controller
         return $data;
     }
 
-    public function stockAlerts()
+    public function stockAlerts(Request $request)
     {
+        $threshold = (int) $request->query('threshold', 10);
+
         $stocks = StockMovement::selectRaw('ingredient_id, sum(delta_qty) as qty')
             ->groupBy('ingredient_id')
             ->get()
             ->keyBy('ingredient_id');
 
-        return Ingredient::all()->map(function ($ingredient) use ($stocks) {
+        return Ingredient::all()->map(function ($ingredient) use ($stocks, $threshold) {
             $qty = $stocks->get($ingredient->id)?->qty ?? 0;
             return ['ingredient' => $ingredient, 'qty' => $qty];
-        });
+        })->filter(function ($row) use ($threshold) {
+            return $row['qty'] < $threshold;
+        })->values();
     }
 }

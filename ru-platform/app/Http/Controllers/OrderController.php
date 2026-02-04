@@ -114,6 +114,10 @@ class OrderController extends Controller
             abort(403);
         }
 
+        if ($order->status === 'paid') {
+            abort(422, 'Cannot cancel a paid order');
+        }
+
         $order->status = 'cancelled';
         $order->save();
 
