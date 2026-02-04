@@ -13,18 +13,6 @@ parameters:
 			path: app/Http/Controllers/AuthController.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\Category\:\:orderBy\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/CategoryController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\Ingredient\:\:orderBy\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/IngredientController.php
-
-		-
 			message: '#^Access to an undefined property App\\Models\\Dish\|Illuminate\\Database\\Eloquent\\Collection\<int, App\\Models\\Dish\>\:\:\$ingredients\.$#'
 			identifier: property.notFound
 			count: 1
@@ -43,12 +31,6 @@ parameters:
 			path: app/Http/Controllers/OrderController.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\Dish\:\:findOrFail\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/OrderController.php
-
-		-
 			message: '#^Call to protected method increment\(\) of class Illuminate\\Database\\Eloquent\\Model\.$#'
 			identifier: method.protected
 			count: 1
@@ -61,31 +43,13 @@ parameters:
 			path: app/Http/Controllers/PaymentController.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\Payment\:\:updateOrCreate\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/PaymentController.php
-
-		-
 			message: '#^Anonymous function has an unused use \$threshold\.$#'
 			identifier: closure.unusedUse
 			count: 1
 			path: app/Http/Controllers/StatsController.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\Order\:\:selectRaw\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/StatsController.php
-
-		-
 			message: '#^Call to an undefined static method App\\Models\\OrderItem\:\:selectRaw\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/StatsController.php
-
-		-
-			message: '#^Call to an undefined static method App\\Models\\StockMovement\:\:selectRaw\(\)\.$#'
 			identifier: staticMethod.notFound
 			count: 1
 			path: app/Http/Controllers/StatsController.php
@@ -103,88 +67,10 @@ parameters:
 			path: app/Http/Controllers/StatsController.php
 
 		-
-			message: '#^Call to an undefined static method App\\Models\\User\:\:paginate\(\)\.$#'
-			identifier: staticMethod.notFound
-			count: 1
-			path: app/Http/Controllers/UserController.php
-
-		-
 			message: '#^Parameter \#1 \$user of static method Illuminate\\Support\\Facades\\Auth\:\:setUser\(\) expects Illuminate\\Contracts\\Auth\\Authenticatable, Illuminate\\Database\\Eloquent\\Model given\.$#'
 			identifier: argument.type
 			count: 1
 			path: app/Http/Middleware/ApiTokenAuth.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/Category.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/Dish.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/Ingredient.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/Menu.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/MenuItem.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/Order.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/OrderItem.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/Payment.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/Review.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/StockMovement.php
-
-		-
-			message: '#^Access to an undefined property App\\Models\\User\:\:\$role\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Models/User.php
-
-		-
-			message: '#^PHPDoc tag @mixin contains unknown class Eloquent\.$#'
-			identifier: class.notFound
-			count: 1
-			path: app/Models/User.php
 
 		-
 			message: '#^Call to an undefined method Illuminate\\Contracts\\Filesystem\\Filesystem\:\:assertExists\(\)\.$#'

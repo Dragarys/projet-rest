@@ -5,6 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\Order
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $status
+ * @property float|null $total
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Order where(string $column, $value = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|Order create(array $attributes = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|Order selectRaw(string $columns)
+ * @method static \Illuminate\Database\Eloquent\Builder|Order paginate(int $perPage = null)
+ * @mixin \Illuminate\Database\Eloquent\Model
+ */
 class Order extends Model
 {
     use HasFactory;
