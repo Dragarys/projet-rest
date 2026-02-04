@@ -60,7 +60,9 @@ class OrderController extends Controller
                 $total += $dish->price * $item['quantity'];
 
                 foreach ($dish->ingredients as $ingredient) {
-                    $need = $ingredient->pivot->qty * $item['quantity'];
+                    $pivot = $ingredient->pivot;
+                    /** @var object{qty:int} $pivot */
+                    $need = $pivot->qty * $item['quantity'];
                     $requiredIngredients[$ingredient->id] = ($requiredIngredients[$ingredient->id] ?? 0) + $need;
                 }
             }

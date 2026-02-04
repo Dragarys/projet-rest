@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $stock
  * @property int|null $sold_count
  * @property string|null $image_url
+ * @property \Illuminate\Support\Collection<int, \App\Models\Ingredient> $ingredients
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|Dish where(string $column, $value = null)

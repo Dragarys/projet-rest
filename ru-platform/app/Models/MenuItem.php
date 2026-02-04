@@ -12,6 +12,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $menu_id
  * @property int $dish_id
  * @property int|null $limit
+ * @property int|null $quantity_limit
+ * @property int|null $sold_count
+ * @method bool increment(string $column, int $amount = 1)
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|MenuItem where(string $column, $value = null)

@@ -17,6 +17,7 @@ use Illuminate\Notifications\Notifiable;
  * @property string|null $staff_id
  * @property string|null $api_token
  * @property string $role
+ * @property string $password
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|User where(string $column, $value = null)

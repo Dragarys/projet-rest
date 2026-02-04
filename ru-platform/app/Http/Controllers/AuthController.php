@@ -17,6 +17,7 @@ class AuthController extends Controller
         ]);
 
         $user = User::where('email', $data['email'])->first();
+        /** @var \App\Models\User|null $user */
         if (!$user || !Hash::check($data['password'], $user->password)) {
             return response()->json(['message' => 'Invalid credentials'], 401);
         }
@@ -39,6 +40,7 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $user = $request->user();
+        /** @var \App\Models\User|null $user */
         if ($user) {
             $user->api_token = null;
             $user->save();
