@@ -13,19 +13,19 @@ parameters:
 			path: app/Http/Controllers/AuthController.php
 
 		-
-			message: '#^Access to an undefined property App\\Models\\Dish\|Illuminate\\Database\\Eloquent\\Collection\<int, App\\Models\\Dish\>\:\:\$ingredients\.$#'
+			message: '#^Access to an undefined property App\\Models\\Dish\:\:\$ingredients\.$#'
 			identifier: property.notFound
 			count: 1
 			path: app/Http/Controllers/OrderController.php
 
 		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$quantity_limit\.$#'
+			message: '#^Access to an undefined property App\\Models\\MenuItem\:\:\$quantity_limit\.$#'
 			identifier: property.notFound
 			count: 1
 			path: app/Http/Controllers/OrderController.php
 
 		-
-			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$sold_count\.$#'
+			message: '#^Access to an undefined property App\\Models\\MenuItem\:\:\$sold_count\.$#'
 			identifier: property.notFound
 			count: 1
 			path: app/Http/Controllers/OrderController.php
@@ -37,46 +37,10 @@ parameters:
 			path: app/Http/Controllers/OrderController.php
 
 		-
-			message: '#^Access to an undefined property App\\Models\\Order\:\:\$total_amount\.$#'
-			identifier: property.notFound
-			count: 1
-			path: app/Http/Controllers/PaymentController.php
-
-		-
-			message: '#^Anonymous function has an unused use \$threshold\.$#'
-			identifier: closure.unusedUse
-			count: 1
-			path: app/Http/Controllers/StatsController.php
-
-		-
 			message: '#^Call to an undefined static method App\\Models\\OrderItem\:\:selectRaw\(\)\.$#'
 			identifier: staticMethod.notFound
 			count: 1
 			path: app/Http/Controllers/StatsController.php
-
-		-
-			message: '#^Parameter \#2 \$default of method Illuminate\\Http\\Request\:\:query\(\) expects array\|string\|null, int given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Http/Controllers/StatsController.php
-
-		-
-			message: '#^Using nullsafe property access "\?\-\>qty" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
-			identifier: nullsafe.neverNull
-			count: 1
-			path: app/Http/Controllers/StatsController.php
-
-		-
-			message: '#^Parameter \#1 \$user of static method Illuminate\\Support\\Facades\\Auth\:\:setUser\(\) expects Illuminate\\Contracts\\Auth\\Authenticatable, Illuminate\\Database\\Eloquent\\Model given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Http/Middleware/ApiTokenAuth.php
-
-		-
-			message: '#^Call to an undefined method Illuminate\\Contracts\\Filesystem\\Filesystem\:\:assertExists\(\)\.$#'
-			identifier: method.notFound
-			count: 1
-			path: tests/Feature/DishImageTest.php
 
 		-
 			message: '#^Call to method PHPUnit\\Framework\\Assert\:\:assertTrue\(\) with true will always evaluate to true\.$#'
